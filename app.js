@@ -18,35 +18,36 @@ let bottomCounter = 0;
 // set state for all of the character's catchphrases
 let catchphrases = [];
 
-headDropdown.addEventListener('change', () => {
+headDropdown.addEventListener('change', (e) => {
     // get the value of the head dropdown
-    //const value = e.target.value;
+    const value = e.target.value;
     // increment the head change count state
-    //headCounter++;
-    // update the dom for the head (use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
-
+    headCounter++;
+    // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
+    headEl.style.backgroundImage = `url("assets/${value}-head.png")`;
     // update the stats to show the new count (refactor to/call displayStats() to do this work)
+    //displayStats();
 });
 
 
-middleDropdown.addEventListener('change', () => {
+middleDropdown.addEventListener('change', (e) => {
     // get the value of the middle dropdown
-
+    const value = e.target.value;
     // increment the middle change count state
-    
+    middleCounter++;
     // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
-
+    middleEl.style.backgroundImage = `url("assets/${value}-middle.png")`;
     // update the stats to show the new count (refactor to/call displayStats() to do this work)
 });
 
 
-bottomDropdown.addEventListener('change', () => {
+bottomDropdown.addEventListener('change', (e) => {
     // get the value of the bottom dropdown
-
+    const value = e.target.value;
     // increment the bottom change count state
-    
+    bottomCounter++;
     // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
-
+    bottomEl.style.backgroundImage = `url("assets/${value}-pants.png")`;
     // update the stats to show the new count (refactor to/call displayStats() to do this work)
 });
 
